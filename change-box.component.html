@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div style="float:left;width:50%">
+  <h4>Change Box</h4>
+  <label>Enter an Amount</label>
+  <input type="number" value="" #inputAmount>
+  <button type="submit" (click)="onSubmit()">Submit</button>
+  <table>
+    <tr>
+      <th></th>
+      <th>Denominations</th>
+      <th>Coin Count</th>
+    </tr>
+    <tr *ngFor="let data of denominationsArray;let i">
+      <td><button type="button" (click)="onDelete(i)">Delete</button></td>
+    <td>{{data.denominations}}</td>
+    <td>{{data.coinCount}}</td>
+
+    </tr>
+  </table>
+
+</div>
+<div style="float:right;width:50%">
+    <h4>Recent Transactions</h4>
+    <label>Search an Amount</label>
+    <input type="number" [(ngModel)]="searchText" value="" >
+  <table>
+    <tr>
+      <th>Amount</th>
+      <th>Denominations</th>
+    </tr>
+    <tr *ngFor="let data of recentTranscRes | filter: {amount:searchText };let i">
+    <td>{{data.amount}}</td>
+    <td>{{data.denominations}}</td>
+
+    </tr>
+  </table>
+</div>

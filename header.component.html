@@ -1,0 +1,9 @@
+
+  <div class="header">
+      <div class="header-right">
+          <a routerLink="/change-box" routerLinkActive="authService.loginSucessFlag==true">Change Box</a>
+          <a routerLink="/user-profile" routerLinkActive="authService.loginSucessFlag==true">User profile</a>
+          <a>{{authService.loggedUser}}</a>
+          <a  (click)="logout()">Logout</a>
+      </div>
+    </div>
